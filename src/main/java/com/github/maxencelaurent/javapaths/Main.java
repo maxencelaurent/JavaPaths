@@ -9,6 +9,7 @@ package com.github.maxencelaurent.javapaths;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -42,9 +43,9 @@ public class Main {
         int indexOf = path.indexOf("target");
 
         String root = path.substring(0, indexOf);
-        URL url = new URL(root +srcPath);
+        URI uri = new URI(root +srcPath);
         System.out.println("CurrentPathURL: " + currentPath);
-        Path get = Paths.get(url.toURI());
+        Path get = Paths.get(uri);
 
         System.out.println("toUri.toPath " + get);
 
